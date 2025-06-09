@@ -86,4 +86,3 @@ for t1,t2,t3,t4 in zip(theta1_vals,theta2_vals,d3_vals,theta4_vals):
 print(f"posição final do efetuador pelo codigo: {final_pos}")
 print(f"posição final do efetuador pelo coppelia: {sim.getObjectPosition(suctionPad)}")
 time.sleep(60)
-sim.stopSimulation()
