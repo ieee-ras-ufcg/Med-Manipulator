@@ -36,7 +36,7 @@ void loop() {
       motorLigado = false; 
     }
   }
-
+//faz o motor dar um passo, se o tempo for maior ou igual ao intervalo predefinido
   if (motorLigado) {
     unsigned long agora = micros();
     if (agora - ultimoTempo >= intervalo) {
@@ -46,7 +46,7 @@ void loop() {
   }
 }
 
-void passoMotor() {
+void passoMotor() { //funcionamento do motor de passo
   switch (passo) {
     case 0: digitalWrite(IN1, HIGH); digitalWrite(IN2, LOW);  digitalWrite(IN3, HIGH); digitalWrite(IN4, LOW);  break;
     case 1: digitalWrite(IN1, LOW);  digitalWrite(IN2, HIGH); digitalWrite(IN3, HIGH); digitalWrite(IN4, LOW);  break;
