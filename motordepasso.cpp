@@ -11,7 +11,7 @@ bool motorLigado = false;
 
 void setup() {
   Serial.begin(9600);
-  Serial.println("Digite: 1 - Sentido horário; 2 - Sentido Anti-horário; 3 - Parar motor");
+  Serial.println("Digite: 1 - Sentido horário; 2 - Sentido Anti-horário; 0 - Parar motor");
 
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
