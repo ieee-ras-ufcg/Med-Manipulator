@@ -1,0 +1,23 @@
+#include <Servo.h>
+#include <PIDController.h>
+
+PIDController pid; 
+Servo myservo; 
+
+void setup() {
+  myservo.attach(9);  
+  Serial.begin(9600);
+  pid.begin();
+  pid.setpoint(90);
+  pid.tune(1,1,0);
+  pid.limit(0, 180);
+}
+
+void loop() {
+  int sensorValue = analogRead(A0);      
+  int angleFeedback = map(sensorValue, 0, 1023, 0, 180);    
+  int output = pid.compute(angleFeedback);
+  myservo.write(output);
+  delay(30);            
+              
+}
